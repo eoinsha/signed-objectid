@@ -1,6 +1,6 @@
 {
   "name": "signed-objectid",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Generates HMAC-signed codes from Mongo ObjectID strings",
   "main": "index.js",
   "scripts": {
