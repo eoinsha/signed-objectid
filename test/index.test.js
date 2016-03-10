@@ -24,7 +24,7 @@ describe('signed-codes', function () {
         expect(code).to.exist()
         expect(code).to.be.a('string').with.length.within(2, 256)
         const decodedData = signedObjectId.unsign(code)
-        expect(decodedData).to.equal(data)
+        expect(decodedData).to.equal(data, code)
       })
 
       it('fails to encode invalid hex', () => {

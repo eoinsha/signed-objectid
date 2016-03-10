@@ -34,7 +34,7 @@ module.exports = function (defaultSecret) {
         throw new Error('Invalid data for code: ' + hex)
       }
       const encData = new Buffer(hex, 'hex').toString('base64')
-      const result = `${encData}${getDigest(hex)}`.replace(/=/g, '$').replace(/\+/g, '@').replace(/\//g, '!').split('').reverse().join('')
+      const result = `${encData}${getDigest(hex)}`.replace(/=/g, '').replace(/\+/g, '-').replace(/\//g, '_').split('').reverse().join('')
       return result
     },
 
@@ -48,10 +48,11 @@ module.exports = function (defaultSecret) {
       if (code.length < 17) {
         return null
       }
-      const normalised = code.replace(/\$/g,'=').replace(/@/g,'+').replace(/!/g,'/').split('').reverse().join('')
+      const normalised = code.replace(/-/g,'+').replace(/_/g,'/').split('').reverse().join('')
+      const padded = normalised + Array(5 - normalised.length % 4).join('=')
       // 24-hex chars always encodes to 16 base64 characters
-      const encData = normalised.substring(0,16)
-      const digest = normalised.substring(16)
+      const encData = padded.substring(0,16)
+      const digest = padded.substring(16)
       const data = new Buffer(encData, 'base64').toString('hex')
       if (getDigest(data) === digest) {
         return data
