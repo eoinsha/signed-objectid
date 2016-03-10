@@ -16,9 +16,9 @@ Generate URL-safe signed codes based on 24-character hex string (like Mongo Obje
 const signedObjectId = require('signed-objectid')('DevTestSecret')
 console.log(signedObjectId.sign('507f1f77bcf86cd799439011'))
 
-// -> $w9@jeWfZ8hayp94dM@euVr351i1KQMHxt6mLTEfFRiXRA5QZeNb4z7df8HU
+// -> w9-jeWfZ8hayp94dM-euVr351i1KQMHxt6mLTEfFRiXRA5QZeNb4z7df8HU
 
-console.log(signedObjectId.unsign('$w9@jeWfZ8hayp94dM@euVr351i1KQMHxt6mLTEfFRiXRA5QZeNb4z7df8HU'))
+console.log(signedObjectId.unsign('w9-jeWfZ8hayp94dM-euVr351i1KQMHxt6mLTEfFRiXRA5QZeNb4z7df8HU'))
 
 // -> 507f1f77bcf86cd799439011
 ```
