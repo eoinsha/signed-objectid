@@ -1,0 +1,44 @@
+{
+  "name": "signed-objectid",
+  "version": "1.0.0",
+  "description": "Generates HMAC-signed codes from Mongo ObjectID strings",
+  "private": "false",
+  "main": "index.js",
+  "scripts": {
+    "check-coverage": "istanbul check-coverage --statements 100 --functions 100 --lines 100 --branches 100",
+    "cov": "istanbul cover _mocha test/**/*.test.js",
+    "eslint": "eslint .",
+    "mocha": "mocha test/**/*.test.js",
+    "postversion": "git push origin HEAD && git push origin v${npm_package_version}",
+    "tdd": "mocha --watch test/**/*.test.js",
+    "test": "npm run eslint && npm run cov && npm run check-coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edappy/signed-objectid.git"
+  },
+  "keywords": [
+    "hmac",
+    "sign",
+    "code",
+    "objectid",
+    "mongo"
+  ],
+  "author": "eoin@edappy.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/edappy/signed-objectid/issues"
+  },
+  "homepage": "https://github.com/edappy/signed-objectid#readme",
+  "devDependencies": {
+    "chai": "*",
+    "dirty-chai": "",
+    "eslint": "*",
+    "istanbul": "*",
+    "mocha": "*"
+  },
+  "enginesStrict": true,
+  "engines": {
+    "node": ">=4.0.0"
+  }
+}
