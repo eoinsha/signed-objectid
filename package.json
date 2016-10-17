@@ -32,7 +32,7 @@
   "devDependencies": {
     "chai": "*",
     "dirty-chai": "",
-    "eslint": "*",
+    "eslint": "3.8.1",
     "istanbul": "*",
     "mocha": "*"
   },
