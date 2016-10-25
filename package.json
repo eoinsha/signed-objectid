@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/edappy/signed-objectid#readme",
   "devDependencies": {
-    "chai": "*",
+    "chai": "3.5.0",
     "dirty-chai": "",
     "eslint": "*",
     "istanbul": "*",
